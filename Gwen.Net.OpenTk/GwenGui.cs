@@ -36,16 +36,16 @@ namespace Gwen.Net.OpenTk
             AttachToWindowEvents();
             renderer = ResolveRenderer();
 
-            skin = new TexturedBase(renderer, "DefaultSkin2.png")
+            skin = new TexturedBase(renderer, Settings.SkinFile.FullName)
             {
-                DefaultFont = new Font(renderer, "Calibri", size: 11)
+                DefaultFont = new Font(renderer, "Calibri", size: 15)
             };
 
             canvas = new Canvas(skin);
             input = new OpenTkInputTranslator(canvas);
 
             canvas.SetSize(Parent.Size.X, Parent.Size.Y);
-            canvas.ShouldDrawBackground = true;
+            canvas.ShouldDrawBackground = Settings.DrawBackground;
             canvas.BackgroundColor = skin.Colors.ModalBackground;
         }
 
