@@ -45,6 +45,7 @@ namespace Gwen.Net.OpenTk
             input = new OpenTkInputTranslator(canvas);
 
             canvas.SetSize(Parent.Size.X, Parent.Size.Y);
+            renderer.Resize(Parent.Size.X, Parent.Size.Y);
             canvas.ShouldDrawBackground = Settings.DrawBackground;
             canvas.BackgroundColor = skin.Colors.ModalBackground;
         }
